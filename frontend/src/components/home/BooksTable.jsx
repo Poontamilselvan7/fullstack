@@ -44,8 +44,9 @@ const BooksTable = ({ books }) => {
                       <AiOutlineEdit className='text-2xl text-yellow-600' />
                     </Link>
                     <Link to={`/books/delete/${book._id}`}>
-                      <MdOutlineDelete className='text-2xl text-red-600' />
-                    </Link>
+  <MdOutlineDelete className='text-2xl text-red-600' />
+</Link>
+
                   </div>
                 </td>
               </tr>
@@ -55,4 +56,4 @@ const BooksTable = ({ books }) => {
   )
 }
 
-export default BooksTable
+export default BooksTable;

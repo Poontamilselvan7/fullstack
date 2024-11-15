@@ -18,7 +18,7 @@ const EditBook = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`https://book-store-b8k4.onrender.com/books/${id}`);
+        const response = await axios.get(`http://localhost:3000/books/${id}`);
         const d = await response.data;
         setAuthor(d.data.author);
         setPublishYear(d.data.publishYear);
@@ -45,7 +45,7 @@ const EditBook = () => {
       await axios.put(`https://book-store-b8k4.onrender.com/books/${id}`, data);
       setLoading(false);
       enqueueSnackbar('Book Edited Successfully', { variant: 'success' });
-      navigate('/');
+      navigate('/show');
     } catch (error) {
       setLoading(false);
       enqueueSnackbar('Error', { variant: 'error' });

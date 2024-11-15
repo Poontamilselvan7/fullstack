@@ -3,7 +3,7 @@ import { BsArrowLeft } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 
-const BackButton = ({ destination = '/' }) => {
+const BackButton = ({ destination = '/show' }) => {
   return (
     <div className='flex'>
         <Link

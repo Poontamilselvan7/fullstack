@@ -6,8 +6,8 @@ import dotenv from 'dotenv'
 import path from 'path';
 import cors from "cors";
 dotenv.config();
-const PORT = process.env.PORT;
-const mongoDBURL = process.env.mongoDBURL;
+const PORT = 3000;
+const mongoDBURL = 'mongodb://localhost:27017/booksample';
 
 const __dirname = path.resolve();
 
@@ -34,13 +34,13 @@ app.get("*", (req, res) => {
 // Option 1 : Allow All Origins with Default of cors(*)
 
 // Option 2 : Allow Custom Origins
-// app.use(
-    //      cors({
-        //         origin: 'http://localhost:5173',
-        //         methods: ['GET','POST','PUT','DELETE'],
-        //         allowedHeaders: ['Content-Type'],
-        //      })
-        // );
+app.use(
+      cors({
+                origin: 'http://localhost:5173',
+                methods: ['GET','POST','PUT','DELETE'],
+                allowedHeaders: ['Content-Type'],
+             })
+        );
         
         mongoose
         .connect(mongoDBURL)

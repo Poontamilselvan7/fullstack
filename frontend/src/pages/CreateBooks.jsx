@@ -21,10 +21,10 @@ const CreateBooks = () => {
     };
     setLoading(true);
     try {
-      await axios.post('https://book-store-b8k4.onrender.com/books', data);
+      await axios.post('http://localhost:3000/books', data);
       setLoading(false);
       enqueueSnackbar('Book Created successfully', { variant: 'success' });
-      navigate('/');
+      navigate('/show');
     } catch (error) {
       setLoading(false);
       // alert('An error happened. Pls check console');
@@ -69,6 +69,7 @@ const CreateBooks = () => {
         <button className='p-2 bg-sky-300 m-8' onClick={handleSaveBook}>
           Save
         </button>
+        
       </div>
     </div>
   );
